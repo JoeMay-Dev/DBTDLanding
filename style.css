@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+:root {
+	--overlay-color: #deb887;
+}
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -19,6 +22,10 @@
 	background: #111;
 	color: #fff;
 	z-index: 2;
+}
+
+.showcase.active {
+	right: 300px;
 }
 
 .showcase header {
@@ -82,7 +89,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #deb887;
+	background: var(--overlay-color);
 	mix-blend-mode: overlay;
 }
 
@@ -155,5 +162,42 @@
 }
 
 .menu {
-	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu ul {
+	position: relative;
+	list-style: none;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	font-size: 24px;
+	color: #111;
+}
+
+.menu ul li a:hover {
+	color: var(--overlay-color);
+}
+
+@media (max-width: 798px) {
+	.showcase,
+	.showcase header {
+		padding: 40px;
+	}
+
+	.text h2 {
+		font-size: 3em;
+	}
+
+	.text h3 {
+		font-size: 2em;
+	}
 }
